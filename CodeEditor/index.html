@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Code Editor</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animate.css">
+</head>
+<body>
+
+<div id="side-bar-setting">
+	<h3 align="center" style="color:white;
+	font-family: sans-serif;
+
+	">Settings</h3>
+	<button style="position:relative;">Change Theme<input type="color" id="theme" oninput="change_theme()"></button>
+	<button style="position:relative;">Text Color<input type="color" id="text-color" oninput="change_color()"></button>
+	<button id="text-font" oninput="font()">Text Font</button>
+	<button id="text-size" onclick="show_size()">Text Size</button>
+	<input type="range" min="10" max="50" oninput="text_size()" id="text-size-range" style="display:none;">
+</div>
+
+	<div id="container">
+		<div id="header">
+			<h1 id="text">Code Editor</h1>
+
+			<button id="run-btn" onclick="show()">Run</button>
+		<button id="back-btn" onclick="back()">Back</button>
+		</div>
+		
+		<div id="code-content">
+			<textarea id="code" spellcheck="false">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+				
+</body>
+</html>
+			</textarea>
+		</div>
+		<div id="result-content">
+		
+		</div>
+		
+	</div>
+<script src="script.js"></script>
+<script>
+function change_theme(){
+	var color=document.getElementById("theme").value;
+	document.getElementById("code").style.background=color;
+}
+function change_color(){
+	var color=document.getElementById("text-color").value;
+	document.getElementById("code").style.color=color;
+}
+function show_size(){
+	var x=document.getElementById("text-size-range");
+	if(x.style.display=="none"){
+		x.style.display="block";
+	}
+	else{
+		x.style.display="none";
+	}
+	
+}
+function text_size(){
+	var size= document.getElementById("text-size-range").value;
+	document.getElementById("code").style.fontSize=size+"px";
+}
+</script>
+</body>
+</html>
