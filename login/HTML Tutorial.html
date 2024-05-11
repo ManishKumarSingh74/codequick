@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Tutorial</title>
+
+<link rel="icon" href="../images/logo.jpg" type="image/jpg">
+<link rel="stylesheet" href="css/navstyle.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animate.css">
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<style>
+  
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: #07076A;
+    padding-top: 20px;
+  }
+
+  
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  
+  .sidebar a:hover {
+    background-color: #555;
+  }
+
+  
+  .content {
+    margin-left: 250px; 
+    padding: 20px;
+  }
+
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e7e7e7;
+}
+
+.tab {
+  
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab button {
+  background-color:#07076A;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  color:#FF0978;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #74aedd;
+}
+
+.tab button.active {
+  background-color: #fff;
+}
+
+.tabcontent {
+  margin-top: 50px;
+  background: #fff;
+  width: 100%;
+  display: none;
+  padding: 6px 12px;
+  font-family: arial;
+  line-height: 21px;
+}
+#codeedit{
+  position: fixed;
+  bottom: 40px;
+  right:40px;
+  width: 90px;
+  height: 60px;
+  background:url("../images/code.png");
+  background-size:cover ;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#codeedit:hover{
+  transform:scale(0.9);
+}
+</style>
+</head>
+<body>
+ 
+ <!-- start codeeditor coding -->
+
+    <div id="codeedit" title="Mini Editor"></div>
+
+    <div id="container">
+    <div id="header">
+      <h1 id="text">Code Editor</h1>
+      <button id="run-btn" onclick="show()">Run</button>
+    <button id="back-btn" onclick="back()">Back</button>
+    </div>
+    
+    <div id="code-content">
+      <textarea id="code" spellcheck="false">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+        
+</body>
+</html>
+      </textarea>
+    </div>
+    <div id="result-content">
+    
+    </div>
+    
+  </div>
+
+<!-- end  -->
+
+<nav>
+
+    <div class="brandBox">
+      <h2>&lt;CodeQuick/&gt;</h2>
+    </div>
+    <div class="menusBox">
+      <ul>
+        <li><a href="../CodeEditor/index.html">IDE for html</a></li>
+        <li><a href="../ide/index.html">IDE for c/c++</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+        <li id="login-btn"><a href="../index.html">Login</a></li> 
+      </ul>
+    </div>
+    
+  </nav>
+<div class="sidebar">
+  <h1 style="color:White;font-family:sans-serif;" align="center">HTML</h1>
+  <div class="tab">
+    <button class="tablinks" data-tab="tab1">Html Basic</button>
+    <button class="tablinks" data-tab="tab2">HTML Formating</button>
+    <button class="tablinks" data-tab="tab3">HTML Lists</button>
+    <button class="tablinks" data-tab="tab4">HTML Marquee</button>
+    <button class="tablinks" data-tab="tab5">HTML Pre & Horizontal rule</button>
+    <button class="tablinks" data-tab="tab6">HTML Image</button>
+    <button class="tablinks" data-tab="tab7">HTML Anchor</button>
+    <button class="tablinks" data-tab="tab8">HTML Tables</button>
+    <button class="tablinks" data-tab="tab9">HTML Table Layout</button>
+
+    <button class="tablinks" data-tab="tab10">HTML Audio</button>
+    <button class="tablinks" data-tab="tab11">HTML Video</button>
+    <button class="tablinks" data-tab="tab12">HTML Iframe</button>
+    <button class="tablinks" data-tab="tab13">HTML Forms</button>
+    <button class="tablinks" data-tab="tab14">HTML Form Elements</button>
+    
+
+
+</div>
+</div>
+
+<div class="content">
+  <div id="tab1" class="tabcontent">
+ <h2>Html Basic</h2>
+ <hr>
+ <iframe width="500" height="360" src="https://www.youtube.com/embed/GpcMasRWUhI?list=PL0b6OzIxLPbxStBQ21C2toa5uQMqHEoRT" title="HTML Introduction in Hindi/Urdu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <p>
+   HTML Documents
+The HTML document itself begins with &lt;html&gt; and ends with &lt;/html&gt;.
+&lt;head&gt; tag contains the title of web page.
+The visible part of the HTML document is between &lt;body&gt; and &lt;/body&gt;.<br>
+ <br>
+
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;First Web Page&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+
+  &lt;body&gt;<br>
+     Hello World<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+</p>
+</div>
+
+<div id="tab2" class="tabcontent">
+ <h1>HTML Formating</h1>
+ <hr>
+ <p>
+   
+<h2>HTML Headings</h2>
+To create headings in HTML, you can use the &lt;h1&gt; to &lt;h6&gt; tags. The &lt;h1&gt; tag defines the most important heading and &lt;h6&gt; defines the least important heading. You should only use one &lt;h1&gt; per page 
+Here is an example of how to create a header using HTML
+ <br><br>
+&lt;h1&gt;Hello World&lt;/h1&gt;<br>
+&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+&lt;h3&gt;Hello World&lt;/h3&gt;<br>
+&lt;h4&gt;Hello World&lt;/h4&gt;<br>
+&lt;h5&gt;Hello World&lt;/h5&gt;<br>
+&lt;h6&gt;Hello World&lt;/h6&gt;<br>
+<br>
+<h2>HTML Paragraphs</h2><br>
+To create paragraphs in HTML, you can use the &lt;p&gt; tag. The &lt;p&gt; element defines a paragraph. A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.
+<br>
+ 
+&lt;p&gt;Quisque iaculis consectetur odio. Praesent commodo.&lt;/p&gt;<br>
+&lt;p&gt;Vestibulum et dolor pellentesque magna pulvinar fermentum a at eros. Pellentesque vel imperdiet enim. Phasellus eget volutpat purus.&lt;/p&gt;
+<br>
+<h2>HTML &lt;b&gt; Tag</h2>
+&lt;b> tag bold the text given inside it to draw the reader's attention to the important text.
+ <br>
+&lt;b&gt;Hello World&lt;/b&gt;
+<br>
+<h2>HTML &lt;i&gt; Tag</h2><br>
+The HTML &lt;i> element defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.
+ <br>
+&lt;i&gt;Hello World&lt;/i&gt;
+<br>
+HTML &lt;u&gt; Tag<br>
+The contents inside this tag displayed with an underline.
+ <br>
+&lt;u&gt;Hello World&lt;/u&gt;
+<br>
+<h2>HTML &lt;s&gt; Tag</h2><br>
+The &lt;s&gt; HTML element is used to represent text that is no longer accurate or relevant. The text will be displayed with a line through it.<br>
+Here is an example of how to use the &lt;s&gt; tag:<br>
+ <br><br>
+&lt;s&gt;Hello World&lt;/s&gt;
+<br>
+<h2>Align Property</h2><br>
+The align attribute is used to specify the alignment of text content of an element.There are Four align types<br>
+Align Types : Left, Right, Center, Justify<br>
+Here is an example of how to use the align attribute with center value:<br>
+ <br><br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;First Web Page&lt;/title&gt;<br>
+  &lt;/head&gt;<br><br>
+
+  &lt;body&gt;<br>
+     &lt;h1 align="center"&gt;Hello World/h1&gt;<br>
+     &lt;p align="center"&gt;<br>
+     Quisque iaculis consectetur odio. Praesent commodo, est nec suscipit ultricies, nulla eros <br>
+     molestie mauris, eu tincidunt ex nunc non ipsum. Maecenas ornare semper ante, volutpat euismod <br>
+     arcu faucibus id. Vivamus ut nisi nec tellus condimentum auctor a eu dui. Quisque nunc urna, <br>
+     euismod sit amet pharetra vitae, mollis vitae leo. Aenean viverra consequat nibh
+     &lt;/p&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+<h2>HTML &lt;sup&gt; Tag</h2><br>
+The &lt;sup&gt; HTML element is used to represent superscript text. Superscript text appears half a character above the normal line and is sometimes rendered in a smaller font.<br>
+Here is an example of how to use the &lt;sup&gt; tag:<br>
+ <br>
+&lt;p&gt;12&lt;sup&gt;th&lt;/sup&gt;&lt;/p&gt;<br>
+<br>
+<h2>HTML &lt;sub&gt; Tag</h2><br>
+The &lt;sub&gt; HTML element is used to represent subscript text. Subscript text appears half a character below the normal line and is sometimes rendered in a smaller font.<br>
+Here is an example of how to use the &lt;sub&gt; tag:<br>
+ <br>
+
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;<br>
+<br>
+<h2>HTML &lt;/br&gt; Tag</h2><br>
+The &lt;br&gt; HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
+Here is an example of how to use the &lt;br&gt; tag:<br>
+ <br>
+
+&lt;p&gt;Quisque iaculis consectetur odio.&lt;/br&gt; Praesent commodo, est nec suscipit ultricies, &lt;/br&gt;nulla eros molestie mauris, eu &lt;/br&gt;tincidunt ex nunc non ipsum. Maecenas ornare semper &lt;/br&gt;ante, volutpat euismod arcu faucibus id&lt;p&gt;<br><br>
+
+<h2>HTML Non-breaking space</h2><br>
+The non-breaking space is a special character in HTML that prevents the browser from breaking a line at that point. It is useful for writing text that should not be broken by line breaks or other whitespace.<br>
+Here is an example of how to use the non-breaking space:<br><br>
+ 
+
+&lt;h1&gt;Hello &nbsp &nbsp &nbsp  World&lt;/h1&gt;<br>
+
+
+ </p>
+</div>
+
+  <div id="tab3" class="tabcontent">
+    <h2>HTML List</h2>
+    <p>
+
+      HTML lists are used to specify lists of information. There are three different types of HTML lists:<br><br>
+
+Ordered List or Numbered List (ol)<br>
+Unordered List or Bulleted List (ul)<br>
+Description List or Definition List (dl)<br>
+<h2>1. Unordered HTML List</h2><br>
+The HTML &lt;ul&gt; tag defines an unordered (bulleted) list.<br>
+An unordered list starts with the &lt;ul&gt; tag. Each list item starts with the &lt;li&gt; <br>tag.The list items will be marked with bullets (small black circles) by default:<br>
+ 
+<br>
+&lt;ul&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;ul&gt;<br>
+<br>
+<h2>Unordered List with type property</h2><br>
+You can use the type attribute in the &lt;ul&gt; tag to specify the type of bullet point you want to use for each list item in an unordered list. Here is an example of how to create an unordered list with different bullet types:<br>
+<br>
+Types : disc, square, circle
+ <br>
+&lt;ul type="sqare"&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;/ul&gt;<br>
+<br>
+<h2>2. Ordered HTML List</h2><br>
+To create an ordered list in HTML, you can use the &lt;li&gt; tag. Each element of an ordered list is declared inside the &lt;li&gt; tag. Here is an example of an ordered list:
+ 
+&lt;ol&gt;
+  &lt;li&gt;Orange&lt;li&gt;
+  &lt;li&gt;Apple&lt;li&gt;
+  &lt;li&gt;Grapes&lt;li&gt;
+  &lt;li&gt;Banana&lt;li&gt;
+  &lt;li&gt;Pineapple&lt;li&gt;
+&lt;/ol&gt;
+
+<h2>Ordered List with type and start property</h2><br>
+You can use the type attribute in the &lt;li&gt; tag to specify the type of numbering you want to use for each list item in an ordered list. You can also use the start attribute to specify the starting number for the list. Here is an example of how to create an ordered list with different numbering types and a starting number:<br>
+<br>
+Types : A,a,i.I,1<br>
+ 
+&lt;ol type="A" start="3"&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;/ol&gt;<br>
+<br>
+&lt;ol type="a" start="4"&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;/ol&gt;<br>
+<br>
+&lt;ol type="i" start="10"&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;/ol&gt;<br>
+<br>
+&lt;ol type="I" start="100"&gt;<br>
+  &lt;li&gt;Orange&lt;li&gt;<br>
+  &lt;li&gt;Apple&lt;li&gt;<br>
+  &lt;li&gt;Grapes&lt;li&gt;<br>
+  &lt;li&gt;Banana&lt;li&gt;<br>
+  &lt;li&gt;Pineapple&lt;li&gt;<br>
+&lt;/ol&gt;<br>
+<br>
+<h2>3. HTML Discription List</h2><br>
+In HTML, you can create a description list using the &lt;dl&gt; tag. A description list is a list of terms and their descriptions. Each term is declared inside the &lt;dt&gt; tag and each description is declared inside the &lt;dd&gt; tag. Here is an example of a description list:
+ <br>
+&lt;dl&gt;<br>
+  &lt;dt&gt;Heading One&lt;/dt&gt;<br>
+  &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta nunc sem, non tincidunt <br>
+      quam accumsan eget. Integer non cursus est. Cras eu ex odio. Suspendisse euismod laoreet 
+      porttitor. Pellentesque ac sem nec dolor ullamcorper gravida.&lt;/dd&gt;<br>
+  &lt;dt&gt;Heading Two&lt;/dt&gt;<br>
+  &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta nunc sem, non tincidunt <br>
+      quam accumsan eget. Integer non cursus est. Cras eu ex odio. Suspendisse euismod laoreet 
+      porttitor. Pellentesque ac sem nec dolor ullamcorper gravida.&lt;/dd&gt;<br>
+  &lt;dt&gt;Heading Three&lt;/dt&gt;<br>
+  &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta nunc sem, non tincidunt <br>
+      quam accumsan eget. Integer non cursus est. Cras eu ex odio. Suspendisse euismod laoreet 
+      porttitor. Pellentesque ac sem nec dolor ullamcorper gravida.&lt;dd&gt;<br>
+&lt;/dl&gt;<br>
+
+    </p>
+
+  </div>
+
+  <div id="tab4" class="tabcontent">
+    <h2>HTML Marquee</h2>
+    <p>
+      
+      The &lt;marquee&gt; tag in HTML is used to create a scrolling or moving text or image effect. However, it is considered an obsolete and non-standard tag in HTML5 and is not recommended for use. The &lt;marquee&gt; tag was supported by older web browsers, but modern browsers have phased out support for it.<br>
+<br>
+If you still wish to use the &lt;marquee&gt; tag, here's an example of its basic usage:
+<br><br>
+&lt;marquee&gt;Hello World&lt;/marquee&gt;<br><br>
+
+<h2>Marquee with behavior</h2><br>
+&lt;marquee behavior="scroll"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="slide"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="alternate"&gt;Hello World&lt;/marquee&gt;<br>
+<br>
+<h2>Marquee with scrollamount</h2><br>
+&lt;marquee behavior="scroll" scrollamount="5"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="slide" scrollamount="10"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="alternate" scrollamount="2"&gt;Hello World&lt;/marquee&gt;<br>
+<br>
+<h2>Marquee with direction</h2><br>
+&lt;marquee behavior="scroll" scrollamount="5" direction="left"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="slide" scrollamount="10" direction="right"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="alternate" scrollamount="2" direction="up"&gt;Hello World&lt;/marquee&gt;<br>
+&lt;marquee behavior="scroll" scrollamount="8" direction="down"&gt;Hello World&lt;/marquee&gt;<br>
+<br>
+In the example above, the text or image within the &lt;marquee&gt; tags will scroll from right to left. Here's a breakdown of the attributes used:<br>
+<br>
+direction: Specifies the direction of the scroll. It can be set to "left", "right", "up", or "down".<br>
+behavior: Defines the scrolling behavior. It can be set to "scroll", "slide", or "alternate" (scrolls back and forth).<br>
+scrollamount: Sets the speed of the scrolling motion. The value can be adjusted according to your preference.<br>
+<h2>Marquee with loop</h2><br>
+The loop attribute specifies how many times the marquee should loop. If the loop attribute is not specified, the marquee will scroll only once. Here is an example of how to use the &lt;<br>marquee&gt; tag with loop attribute:<br>
+ <br>
+&lt;marquee scrollamount="5" loop="3"&gt;Hello World&lt;/marquee&gt;<br>
+<br>
+<h2>Marquee with bgcolor</h2><br>
+The bgcolor attribute specifies the background color of the marquee. Here is an example of how to use the &lt;marquee&gt; tag with bgcolor attribute:<br>
+ <br>
+&lt;marquee scrollamount="5" bgcolor="pink"&gt;Hello World&lt;/marquee&gt;<br>
+<br>
+<h2>Marquee with height and width</h2><br>
+The height and width attributes specify the height and width of the marquee. Here is an <br>example of how to use the &lt;marquee&gt; tagw with height and width:<br><br>
+ 
+&lt;marquee scrollamount="5" bgcolor="pink" height="50%" width="50%"&gt;Hello World&lt;/marquee&gt;<br>
+
+    </p>
+  </div>
+
+  <div id="tab5" class="tabcontent">
+    <h2>HTML Hr & Pre</h2>
+    <p>
+      
+      <h2>HTML &lt;hr/&gt; Tag</h2><br>
+The &lt;hr&gt; HTML element is used to create a horizontal line in an HTML page. It is often used to separate sections of a page.<br>
+Here is an example of how to use the &lt;hr&gt; tag:<br><br>
+ 
+
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;First Web Page&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+     &lt;h1&gt;Hello World&lt;/h1&gt;<br>
+     &lt;hr/&gt;<br>
+     &lt;p&gt;<br>
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta nunc sem, non tincidunt <br>
+     quam accumsan eget. Integer non cursus est. Cras eu ex odio. Suspendisse euismod laoreet 
+     porttitor. Pellentesque ac sem nec dolor ullamcorper gravida.<br>
+     &lt;/p&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+<br>
+<h2>HTML &lt;pre&gt; Tag</h2><br>
+The &lt;pre&gt; HTML element is used to define preformatted text. The text inside a &lt;pre&gt; element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.<br>
+Here is an example of how to use the &lt;pre&gt; tag:<br>
+ <br>
+
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;First Web Page&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+     &lt;pre&gt;  &nbsp;&nbsp;&nbsp;&nbsp;              Hello &nbsp;&nbsp;&nbsp;&nbsp;             World &nbsp;&nbsp;&nbsp;&nbsp;                YahooBaba&lt;/pre&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+    </p>
+  </div>
+
+  <div id="tab6" class="tabcontent">
+    <h2>HTML Image</h2>
+    <p>
+      The &lt;img&gt; tag in HTML is used to embed images in an HTML document.<br>
+The src attribute specifies the URL of the image.<br>
+The alt attribute specifies an alternate text for the image, which is displayed if the image cannot be loaded .<br>
+You can also use the width and height attributes to specify the size of the image.<br>
+Here is an example of how to use the &lt;img&gt; tag:<br>
+ <br>
+&lt;img src="YOUR IMAGE PATH" alt="Hello World" width="500px" height="600px" title="Hello World"&gt;<br>
+YahooBaba<br>
+Premium Subscription<br>
+Subscribe Now!<br>
+    </p>
+  </div>
+
+  <div id="tab7" class="tabcontent">
+    <h2>HTML Anchor</h2>
+    <p>
+      
+      The &lt;a&gt; tag in HTML is used to create hyperlinks. The href attribute specifies the URL of the page the link goes to.<br>
+Here is an example of how to use the &lt;a&gt; tag:<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Anchor Tag&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;a href="https://www.yahoobaba.net"&gt;Go to YahooBaba&lt;/a&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+<br>
+Anchor Tag with target property<br>
+The target attribute specifies where to open the linked document.It specifies that the linked document should be opened in a new window or tab. The value “_blank” specifies that the linked document should be opened in a new window or tab.<br>
+Here is an example of how to use the target attribute:<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Anchor Tag&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;a href="https://www.yahoobaba.net" target="_blank"&gt;Go to YahooBaba&lt;/a&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+
+    </p>
+  </div>
+
+  <div id="tab8" class="tabcontent">
+    <h2>Tab 3</h2>
+    <p>
+      
+      HTML tables are used to display data in rows and columns. They are created using the &lt;table&gt; tag and its related tags such as &lt;tr&gt; (table row), &lt;th&gt; (table header), and &lt;td&gt; (table data).<br>
+Here is an example of how to create a simple HTML table:<br>
+<br>
+ 
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Table Tag&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;table border="1" align="center" width="80%" cellpadding="10px" cellspacing="10px"&gt;<br>
+      &lt;tr align="right"&gt;<br>
+        &lt;td valign="top"&gt;Nunc et eros mi. Nam purus diam&lt;/td&gt;<br>
+        &lt;td&gt;Sed non massa nec augue viverra blandit sed ac mauris. Aliquam pellentesque pulvinar quam&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="400px" valign="top" align="right"&gt;magna porttitor sed. Vivamus<br> condimentum &lt;/td&gt;<br>
+        &lt;td&gt;Ut lobortis quis lacus vel viverra. Nullam tempor ligula at urna <br>condimentum ultrices. Ut sodales ornare faucibus. Ut augue neque, interdum sit amet <br>efficitur euismod&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br><br>
+ 
+
+ 
+Table with Colspan<br>
+HTML tables can havbre cells that span over multiple rows and/or columns.<br>
+To make a cell span over multiple columns, use the colspan attribute:<br>
+ <br>
+&lbrt;html&gt;<br>
+  &lt;head&gtbr;<br>
+    &lt;title&gbrt;Colspan&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;table bbrorder="1" align="center" width="50%" cellpadding="10px" cellspacing="0px"&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td hebright="100px"&gt;A&lt;/td&gt;<br>
+        &lt;td&gt;B&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td hebright="100px" colspan="2"&gt;C&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td hebright="100px"&gt;E&lt;/td&gt;<br>
+        &lt;td&gt;F&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;br<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+<br>
+Nbrote: The value of the colspan attribute represents the number of columns to span.<br>
+<br>
+Tbrable with rowspan<br>
+To make a cell spanbr over multiple rows, use the rowspan attribute:<br>
+ <br>
+<br>
+&brlt;html&gt;<br>
+  &lt;head&gtbr;<br>
+    &lt;title&gbrt;Rowspan&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gtbr;<br>
+    &lt;table border="1" align="center" width="50%" cellpadding="10px" cellspacing="0px"&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px"&gt;A&lt;/td&gt;<br>
+        &lt;td&gt;B&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px" rowspan="2"&gt;C&lt;/td&gt;<br>
+        &lt;td&gt;D&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px"&gt;F&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+ <br>
+Note: The value of the rowspan attribute represents the number of rows to span.<br>
+<br>
+Table with caption tag<br>
+You can add a caption to an HTML table using the &lt;caption&gt; tag. Here is an example of how to use the caption tag:<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Table with caption&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;table border="1" align="center" width="50%" cellpadding="10px" cellspacing="0px"&gt;<br>
+      &lt;caption&gt;Student Record&lt;/caption&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px"&gt;A&lt;/td&gt;<br>
+        &lt;td&gt;B&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px"&gt;C&lt;/td&gt;<br>
+        &lt;td&gt;D&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td height="100px"&gt;E&lt;/td&gt;<br>
+        &lt;td&gt;F&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+ <br><br>
+
+ 
+Table with thead,tbody and tfoot<br>
+You can use the &lt;thead&gt;, &lt;tbody&gt; and &lt;tfoot&gt; tags to group the rows of an HTML table into separate sections.<br>
+&lt;thead&gt; tag is used to group the header content in a table.<br>
+&lt;tbody&gt; tag is used to group the body content in a table.<br>
+&lt;tfoot&gt; tag is used to group the footer content in a table.<br>
+Here is an example of how to use these tags:<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Table with caption&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;table border="1" align="center" width="50%" cellpadding="10px" cellspacing="0px"&gt;<br>
+      &lt;thead&gt;<br>
+        &lt;tr&gt;<br>
+          &lt;th&gt;Subject&lt;/th&gt;<br>
+          &lt;th&gt;Marks&lt;/th&gt;<br>
+        &lt;/tr&gt;<br>
+      &lt;/thead&gt;<br>
+      &lt;tbody bgcolor="tan"&gt;<br>
+        &lt;tr&gt;<br>
+          &lt;td&gt;Math&lt;/td&gt;<br>
+          &lt;td&gt;80&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt;<br>
+          &lt;td&gt;English&lt;/td&gt;<br>
+          &lt;td&gt;70&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt;<br>
+          &lt;td&gt;Science&lt;/td&gt;<br>
+          &lt;td&gt;75&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+      &lt;/tbody&gt;<br>
+      &lt;tfoot&gt;<br>
+        &lt;tr&gt;<br>
+          &lt;td&gt;Total Marks&lt;/td&gt;<br>
+          &lt;td&gt;255&lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+      &lt;/tfoot&gt;<br>
+    &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+    </p>
+  </div>
+
+  
+
+  <div id="tab9" class="tabcontent">
+    <h2>HTML Table Layout</h2>
+    <p>
+      
+      &lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Table Layout&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  <br>
+  &lt;body&gt;<br>
+    &lt;table width="80%" border="1" cellpadding="10px" cellspacing="0" align="center"&gt;<br>
+      &lt;tr bgcolor="pink"&gt;<br>
+        &lt;td colspan="2"&gt;<br>
+          &lt;h1&gt;Site Name&lt;/h1&gt;<br>
+        &lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr bgcolor="orange"&gt;<br>
+        &lt;td colspan="2"&gt;<br>
+          &lt;a href=""&gt;Home&lt;/a&gt; | &lt;a href=""&gt;About Us&lt;/a&gt; | &lt;a href=""&gt;Gallery&lt;/a&gt; | &lt;a href=""&gt;FAQ&lt;/a&gt; | &lt;a href=""&gt;Contact Us&lt;/a&gt;<br>
+        &lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td width="80%"&gt;<br>
+          &lt;h2&gt;Sub Heading&lt;/h2&gt;<br>
+          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel turpis maximus ex vulputate venenatis cursus in justo. Donec euismod sagittis vehicula. Mauris vel fermentum neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed interdum placerat molestie. Etiam vestibulum, dui vel vulputate sollicitudin, quam est pretium justo, sit amet gravida nisl quam ut arcu. Aenean eu viverra tellus. Maecenas leo orci, ullamcorper laoreet feugiat vel, consectetur eget leo. Nulla fringilla, leo non finibus congue, sem massa faucibus felis, vitae sollicitudin diam nisi eu ante. Nam eu quam malesuada, vehicula tellus eu, consequat eros. Nam mattis est quis dolor ultricies bibendum. Maecenas eget tellus ac diam consequat sollicitudin. In feugiat erat varius eros eleifend posuere. Proin finibus vestibulum ante id tempor. Fusce sollicitudin nunc a urna varius mollis non sed justo. Suspendisse consectetur odio interdum libero vestibulum, non consequat est suscipit.&lt;/p&gt;<br>
+          &lt;p&gt;Nam gravida ligula non ullamcorper suscipit. Praesent ante nisl, vestibulum eget nibh quis, interdum ornare tortor. In ac erat pharetra odio egestas viverra. Duis consectetur tincidunt metus ornare hendrerit. Nullam nulla velit, lacinia at lacus id, imperdiet dapibus purus. Nam non malesuada eros, vel congue tortor. Cras massa orci, mattis aliquet feugiat a, molestie eu nunc. Aenean suscipit sagittis mi sit amet tempus. Cras porta, augue sit amet scelerisque suscipit, sem ligula vehicula justo, nec consectetur tortor mauris quis orci. Etiam egestas mattis justo, ut iaculis nulla interdum sed. Integer feugiat est at nisl sagittis tincidunt.&lt;/p&gt;<br>
+          <br>
+        &lt;/td&gt;<br>
+        &lt;td valign="top"&gt;<br>
+          &lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href=""&gt;About Us&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href=""&gt;Gallery&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href=""&gt;FAQ&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href=""&gt;Contact Us&lt;/a&gt;&lt;/li&gt;<br>
+          &lt;/ul&gt;<br>
+        &lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr bgcolor="pink"&gt;<br>
+        &lt;td colspan="2"&gt;<br>
+          @copyright sitename 2018.<br>
+        &lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+    </p>
+  </div>
+
+  <div id="tab10" class="tabcontent">
+    <h2>HTML Audio</h2>
+    <p>
+      The HTML &lt;audio&gt; element is used to play an audio file on a web page<br>
+The &lt;audio&gt; HTML element is used to embed sound content in a document, such as music or other audio streams.<br>
+Here is an example of how to use the &lt;audio&gt; tag:<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Audio Tag&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  <br>
+  &lt;body&gt;<br>
+    &lt;audio controls autoplay loop&gt;<br>
+      &lt;source src="YOUR_FILE_PATH" type="audio/mpeg" /&gt;<br>
+    &lt;/audio&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+ <br>
+The controls attribute adds audio controls, like play, pause, and volume.<br>
+The &lt;source&gt; element allows you to specify alternative audio files which the browser may choose from. The browser will use the first recognized format.<br>
+    </p>
+  </div>
+
+
+<div id="tab11" class="tabcontent">
+    <h2>HTML Video</h2>
+    <p>
+    The HTML &lt;video&gt; element is used to show a video on a web page.<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Video Tag&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+  <br>
+  &lt;body&gt;<br>
+    &lt;video controls loop width="320" height="240" muted poster="IMAGE_PATH"&gt;<br>
+      &lt;source src="VIDEO_PATH" type="video/mp4" /&gt;<br>
+    &lt;/video&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+ <br>
+The controls attribute adds video controls, like play, pause, and volume.<br>
+It is a good idea to always include width and height attributes. If height and width are not <br>set, the page might flicker while the video loads.<br>
+The &lt;source&gt; element allows you to specify alternative video files which the browser may choose from. The browser will use the first recognized format.<br>
+    </p>
+  </div>
+
+
+
+</div>
+
+<script>
+  var tabButtons = document.querySelectorAll(".tablinks");
+
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].addEventListener("click", function () {
+        var tabName = this.dataset.tab;
+        var tabContent = document.getElementById(tabName);
+        var allTabContent = document.querySelectorAll(".tabcontent");
+        var allTabButtons = document.querySelectorAll(".tablinks");
+
+        for (var j = 0; j < allTabContent.length; j++) {
+          allTabContent[j].style.display = "none";
+        }
+
+        for (var k = 0; k < allTabButtons.length; k++) {
+          allTabButtons[k].classList.remove("active");
+        }
+
+        tabContent.style.display = "block";
+        this.classList.add("active");
+      });
+    }
+
+    document.querySelector(".tablinks").click();
+    $("#container").draggable();
+  $("#container").resizable();
+  $(document).ready(function(){
+    $("#codeedit").click(function(){
+      $("#container").toggle(250);
+    });
+  });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

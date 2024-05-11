@@ -1,0 +1,35 @@
+/* For WebKit browsers (Chrome, Safari) */
+/* Change the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the entire scrollbar */
+}
+
+/* Change the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Roundness of the scrollbar thumb */
+}
+
+/* Change the scrollbar track when mouse-over */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scrollbar thumb on hover */
+}
+
+/* For Firefox */
+/* Change the width of the scrollbar */
+/* Firefox supports the "scrollbar-width" property */
+/* Possible values: "thin", "auto", "none" */
+/* "thin" and "auto" have system-dependent widths */
+/* "none" hides the scrollbar */
+body {
+  scrollbar-width: thin; /* "thin" or "auto" */
+}
+
+/* Change the color of the scrollbar */
+/* Firefox supports the "scrollbar-color" property */
+/* First value is the thumb color, second is the track color */
+/* Use hex colors or CSS color names */
+/* If "scrollbar-color" is not supported, Firefox will fall back to system scrollbar */
+body {
+  scrollbar-color: #888 #f5f5f5; /* thumb and track color */
+}

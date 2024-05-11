@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+</head>
+<body>
+    <div class="cent">
+        
+    
+        
+        <div id="page">
+        
+        <div id="login-page" class="animate__animated animate__flipInY">
+            
+        
+        <form id="login" autocomplete="off">
+            <h2>Login Form</h2>
+            
+            
+            <input type="text" name="username" placeholder="username" id="login-username"><br>
+        
+            <input type="password" name="password" placeholder="password" id="login-password"><br>
+            
+            <input type="submit" value="Login" id="login-btn" onclick="return login()">
+
+        
+        </form>
+        <p style="text-align:center;font-size:16px;font-family:sans-serif;">Don't have an Account.
+                <span style="color:red;cursor:pointer;" id="hide" onclick="hide()">Signup</span></p>
+
+        </div>
+        
+        <div id="signup-page" class="animate__animated animate__flipInY">
+            
+        
+        <form id="signup" autocomplete="off">
+            <h2>SignUp User !</h2>
+            <input type="text" name="username" placeholder="Your name" id="signup-username"><br>
+            <input type="email" name="email" placeholder="Email" id="email" onchange="userfound()">
+            <span id="user-exist"></span>
+            <br>
+            <input type="password" name="password" placeholder="Password" id="signup-pass"><br>
+            <input type="number" name="number" placeholder="Mobile no" id="mobileno"><br>
+            <span id="success-text"></span>
+            <input type="submit" value="Sign Up" id="signup-btn" onclick="return signup()">
+        </form> 
+            <p style="text-align:center;font-size:16px;font-family:sans-serif;">Already have an Account.
+                <span style="color:red;cursor:pointer;" id="show" onclick="show()">Login</span></p>
+        </div>
+
+     </div>
+
+     </div>
+
+     <script>
+        var form=document.getElementById("login");
+function submitForm(event){
+
+   event.preventDefault();
+}
+     </script>
+     <script src="js/script.js"></script>
+</body>
+</html>

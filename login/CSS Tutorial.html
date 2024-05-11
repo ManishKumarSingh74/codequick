@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Tutorial</title>
+
+<link rel="icon" href="../images/logo.jpg" type="image/jpg">
+  <link rel="stylesheet" href="css/navstyle.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animate.css">
+<link rel="stylesheet" href="jquery-ui.css">
+<link rel="stylesheet" href="css/scroll.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<style>
+  
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top:60px;
+    left: 0;
+    background-color: #07076A;
+    padding-top: 20px;
+    overflow-y:scroll;
+    padding-bottom:150px ;
+  }
+
+  
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* Change background color on hover */
+  .sidebar a:hover {
+    background-color: #555;
+  }
+
+  /* Styles for the main content */
+  .content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 20px;
+  }
+
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e7e7e7;
+}
+
+.tab {
+  
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab button {
+  background-color:#07076A;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  color:#FF0978;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #74aedd;
+}
+
+.tab button.active {
+  background-color: #fff;
+}
+
+.tabcontent {
+  margin-top: 50px;
+  background: #fff;
+  width: 100%;
+  display: none;
+  padding: 6px 12px;
+  font-family: arial;
+  line-height: 21px;
+}
+#codeedit{
+  position: fixed;
+  bottom: 40px;
+  right:40px;
+  width: 90px;
+  height: 60px;
+  background:url("../images/code.png");
+  background-size:cover ;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#codeedit:hover{
+  transform:scale(0.9);
+}
+</style>
+</head>
+<body>
+
+<!-- start codeeditor coding -->
+
+    <div id="codeedit"></div>
+
+    <div id="container">
+    <div id="header">
+      <h1 id="text">Code Editor</h1>
+      <button id="run-btn" onclick="show()">Run</button>
+    <button id="back-btn" onclick="back()">Back</button>
+    </div>
+    
+    <div id="code-content">
+      <textarea id="code" spellcheck="false">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+        
+</body>
+</html>
+      </textarea>
+    </div>
+    <div id="result-content">
+    
+    </div>
+    
+  </div>
+
+<!-- end  -->
+
+
+<nav>
+    <div class="brandBox">
+      <h2>&lt;CodeQuick/&gt;</h2>
+    </div>
+    <div class="menusBox">
+      <ul>
+        <li><a href="CodeEditor/index.html">Ide for html</a></li>
+        <li><a href="ide/index.html">Ide for c/c++</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Roadmaps</a></li>
+        <li id="login-btn"><a href="login/index.html">Login</a></li>
+      </ul>
+    </div>
+    
+  </nav>
+<div class="sidebar">
+  <h1 style="color:White;font-family:sans-serif;" align="center">CSS</h1>
+  <div class="tab">
+    <button class="tablinks" data-tab="tab1">CSS Introduction</button>
+    <button class="tablinks" data-tab="tab2">CSS Color & Background</button>
+    <button class="tablinks" data-tab="tab3">CSS Borders</button>
+    <button class="tablinks" data-tab="tab4">CSS Outline</button>
+    <button class="tablinks" data-tab="tab5">CSS Padding</button>
+    <button class="tablinks" data-tab="tab6">CSS Margin</button>
+    <button class="tablinks" data-tab="tab7">CSS Height/Width</button>
+    <button class="tablinks" data-tab="tab8">CSS Min-Height/Max-height</button>
+    <button class="tablinks" data-tab="tab9">CSS Min-Width/Max-Width</button>
+    <button class="tablinks" data-tab="tab10">CSS Box-Sizing</button>
+    <button class="tablinks" data-tab="tab11">CSS Overflow</button>
+    <button class="tablinks" data-tab="tab12">CSS Border-Radius</button>
+    <button class="tablinks" data-tab="tab13">CSS Box-Shadow</button>
+    <button class="tablinks" data-tab="tab14">CSS Float</button>
+    <button class="tablinks" data-tab="tab15">CSS Clear</button>
+    <button class="tablinks" data-tab="tab16">CSS Font</button>
+    <button class="tablinks" data-tab="tab17">CSS Text Formatting</button>
+    <button class="tablinks" data-tab="tab18">CSS Text-Decoration</button>
+    <button class="tablinks" data-tab="tab19">CSS Word</button>
+    <button class="tablinks" data-tab="tab20">CSS Text-Shadow</button>
+
+    
+</div>
+</div>
+
+<div class="content">
+  <div id="tab1" class="tabcontent">
+ <h2>CSS Introduction</h2>
+ <hr>
+ 
+ <p>
+   CSS, or Cascading Style Sheets, is a fundamental technology used to style web pages. It works hand in hand with HTML to define the visual presentation of web content, including layout, colors, fonts, and more. Here’s a brief introduction:<br>
+<br>
+Separation of Concerns: CSS allows you to separate the content (HTML) of a webpage from its presentation (styling). This makes your code cleaner, easier to maintain, and more adaptable.
+Syntax: CSS consists of selectors and declaration blocks. Selectors target HTML elements, and declaration blocks contain one or more declarations, each composed of a property and a value. For example:<br>
+css<br>
+Copy code<br>
+p {<br>
+    color: blue;<br>
+    font-size: 16px;<br>
+}<br>
+Selectors: CSS selectors target HTML elements based on various criteria such as element type, class, ID, attributes, and relationships with other elements.<br>
+Properties and Values: CSS properties define specific aspects of an element’s presentation, like color, size, margin, padding, etc. Each property accepts one or more values that determine how the property should be applied.<br>
+Cascading: The "C" in CSS stands for Cascading, which refers to the process of combining styles from different sources (e.g., author styles, user styles, browser defaults) according to a set of rules to determine the final styles of each element.<br>
+Inheritance: CSS properties can be inherited from parent elements to their children. This means that if a parent element has a certain style applied, its children may inherit that style by default.<br>
+External, Internal, and Inline Styles: CSS can be applied to HTML documents in three main ways: externally via a separate CSS file, internally within the HTML document using &lt;style&gt; tags, and inline directly within HTML elements using the style attribute.<br>
+Responsive Design: CSS allows you to create responsive designs by using media queries and other techniques to adapt the layout and styling of a webpage based on factors like screen size, orientation, and resolution.<br>
+Preprocessors and Postprocessors: Developers often use CSS preprocessors like Sass or Less to write more maintainable and powerful CSS, and postprocessors like Autoprefixer to automatically add vendor prefixes to CSS rules for better browser compatibility.<br>
+CSS is a powerful tool for web developers to control the appearance and layout of web pages, and mastering it is essential for creating attractive and functional websites.<br>
+
+</p>
+</div>
+
+
+<div id="tab2" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   Color : <br>
+The color property in CSS is used to set the color of HTML elements. Typically, this property is used to set the backgroun color or the font color of an element. In CSS, we use color values for specifying the color. We can also use this property for the border-color and other decorative effects.<br>
+<br>
+We can define the color of an element by using the following ways:<br>
+<br>
+RGB format.<br>
+RGBA format.<br>
+Hexadecimal notation.<br>
+HSL.<br>
+HSLA.<br>
+Built-in color.<br>
+background-color:<br>
+The background-color property sets the background color of an element.The background of an element is the total size of the element, including padding and border (but not the margin).It makes the text so easy to read for the user. <br>
+ <br>
+<br>
+Syntax:<br>
+element {<br>
+    background-color property<br>
+}<br>
+Default value : It has a default value i.e transparent.<br>
+<br>
+Example:<br>
+<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;CSS Color&lt;/title&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1 style="color: #3300cc;background-color: yellow;"&gt;Yahoo Baba&lt;/h1&gt;<br>
+<br>
+    &lt;p style="color: green;background-color: tan;"&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/p&gt;<br>
+<br>
+    &lt;p&gt;<br>
+      Lorem ipsum dolor sit amet, &lt;span style="background-color: pink;"&gt;consectetur adipiscing elit.&lt;/span&gt; Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+    &lt;/p&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab3" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   CSS Border<br>
+The CSS border properties allow you to specify the style, width, and color of an element's border.<br>
+The CSS border properties are use to specify the style, color and size of the border of an element. The CSS border properties are given below<br>
+<br>
+border-style<br>
+border-color<br>
+border-width<br>
+border-radius<br>
+CSS border-style<br>
+The border-style property specifies what kind of border to display.<br>
+<br>
+The following values are allowed:<br>
+<br>
+dotted - Defines a dotted border<br>
+dashed - Defines a dashed border<br>
+solid - Defines a solid border<br>
+double - Defines a double border<br>
+groove - Defines a 3D grooved border. The effect depends on the border-color value<br>
+ridge - Defines a 3D ridged border. The effect depends on the border-color value<br>
+inset - Defines a 3D inset border. The effect depends on the border-color value<br>
+outset - Defines a 3D outset border. The effect depends on the border-color value<br>
+none - Defines no border<br>
+hidden - Defines a hidden border<br>
+CSS border-width<br>
+The border-width property is used to set the border's width. It is set in pixels. You can also use the one of the three pre-defined values, thin, medium or thick to set the width of the border.<br>
+<br>
+CSS border-color<br>
+There are three methods to set the color of the border.<br>
+<br>
+Name: It specifies the color name. For example: "red".<br>
+RGB: It specifies the RGB value of the color. For example: "rgb(255,0,0)".<br>
+Hex: It specifies the hex value of the color. For example: "#ff0000".<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;CSS Color&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        h1{<br>
+            /* border-width: 3px;<br>
+            border-style: solid dotted dashed inset;<br>
+            border-color: red; */<br>
+<br>
+            /*shorthand*/<br>
+            /*border: 3px solid red;*/<br>
+            border-bottom: 3px solid red;<br>
+            border-top: 3px dashed green;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Color&lt;/h1&gt;<br>
+<br>
+    &lt;p&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/p&gt;<br>
+<br>
+    &lt;p&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/p&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab4" class="tabcontent">
+ <h2>CSS Outline</h2>
+ <hr>
+ <p>
+   CSS outline is just like CSS border property. It facilitates you to draw an extra border around an element to get visual attention.<br>
+<br>
+It is as easy as to apply as a border.<br>
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".<br>
+CSS Outline Style<br>
+The outline-style property specifies the style of the outline, and can have one of the following values:<br>
+<br>
+dotted - Defines a dotted outline<br>
+dashed - Defines a dashed outline<br>
+solid - Defines a solid outline<br>
+double - Defines a double outline<br>
+groove - Defines a 3D grooved outline<br>
+ridge - Defines a 3D ridged outline<br>
+inset - Defines a 3D inset outline<br>
+outset - Defines a 3D outset outline<br>
+none - Defines no outline<br>
+hidden - Defines a hidden outline<br>
+Outline-width:<br>
+It is similar to margin and padding. It can be either an absolute value or a relative value or one of the predefined outline width values i.e. thin, medium or thick. It is preferred to use either an absolute value or a relative value because different browsers interpret differently while using predefined outline width values like thin, medium or thick.<br>
+<br>
+Outline-color:<br>
+It specifies the color that you use for the outline. It supports all the colors available in HTML and CSS.<br>
+<br>
+Outline offset:<br>
+The outline offset is used to create a distance between outline and border. It takes a CSS length unit and the empty space between the border and the outline will be transparent and then it takes the background color of the parent element. <br>
+ <br>
+<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;CSS Outline&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        p{<br>
+            border: 3px solid red;<br>
+            /* outline-width: 2px;<br>
+            outline-style: solid;<br>
+            outline-color: green; */<br>
+<br>
+            /*shorthand*/<br>
+            outline: 2px dashed green;<br>
+            outline-offset: 4px;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Outline&lt;/h1&gt;<br>
+<br>
+    &lt;p&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/p&gt;<br>
+<br>
+    &lt;p&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/p&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab5" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   The CSS padding properties are used to generate space around an element's content, inside of any defined borders.<br>
+<br><br><br>
+With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).<br><br>
+<br><br>
+CSS Padding Properties<br><br>
+Property  Description<br><br>
+padding It is used to set all the padding properties in one declaration.<br><br>
+padding-left  It is used to set left padding of an element.<br><br>
+padding-right It is used to set right padding of an element.<br><br>
+padding-top It is used to set top padding of an element.<br><br>
+padding-bottom  It is used to set bottom padding of an element.<br><br> 
+If the padding property has three values:<br><br>
+<br><br>
+padding: 25px 50px 75px;<br><br>
+top padding is 25px<br><br>
+right and left paddings are 50px<br><br>
+bottom padding is 75px<br><br>
+If the padding property has two values:<br><br>
+padding: 25px 50px;<br><br>
+top and bottom paddings are 25px<br><br>
+right and left paddings are 50px<br><br>
+If the padding property has one value:<br><br>
+padding: 25px;<br><br>
+all four paddings are 25px<br><br>
+ <br><br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;CSS Padding&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        .test{<br>
+            border: 2px solid black;<br>
+            padding: 20px 50px;<br>
+        }<br>
+    &lt;/style&gt<br>;
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Padding&lt;/h1&gt;<br>
+<br>
+    &lt;div class="test"&gt;<br>
+        Suspendisse molestie nibh massa, eget convallis dolor convallis ut. Aenean efficitur nec augue at vehicula. Nunc tempor ac ante a aliquam. Duis lacinia dolor in libero ornare, at aliquam metus posuere. Phasellus porttitor, diam et semper tempus, nisl nunc ullamcorper sem, in viverra ex ligula a lacus. Donec ac sapien urna. Sed id est orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ex metus, tincidunt non massa volutpat, pharetra vulputate libero. Donec vehicula dolor sit amet lacinia viverra. Pellentesque sed luctus sem. Duis turpis purus, vestibulum egestas posuere cursus, imperdiet in lacus. Proin vehicula semper aliquam. Maecenas sodales sagittis lobortis. Etiam felis massa, tempus fermentum felis ut, pretium mattis dui.
+    &lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+
+<div id="tab6" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   CSS Margin<br>
+CSS Margin property is used to define the space around elements. It is completely transparent and doesn't have any background color. It clears an area around the element.Top, bottom, left and right margin can be changed independently using separate properties. You can also change all properties at once by using shorthand margin property.<br>
+<br>
+CSS has properties for specifying the margin for each side of an element:<br>
+<br>
+margin-top<br>
+margin-right<br>
+margin-bottom<br>
+margin-left<br>
+Margin - Shorthand Property<br>
+To shorten the code, it is possible to specify all the margin properties in one property.<br>
+<br>
+The margin property is a shorthand property for the following individual margin properties:<br>
+<br>
+If the margin property has four values:<br>
+<br>
+margin: 25px 50px 75px 100px;<br>
+top margin is 25px<br>
+right margin is 50px<br>
+bottom margin is 75px<br>
+left margin is 100px<br>
+If the margin property has three values:<br>
+<br>
+margin: 25px 50px 75px;<br>
+top margin is 25px<br>
+right and left margins are 50px<br>
+bottom margin is 75px<br>
+If the margin property has two values:<br>
+<br>
+margin: 25px 50px;<br>
+top and bottom margins are 25px<br>
+right and left margins are 50px<br>
+If the margin property has one value:<br>
+<br>
+margin: 25px;<br>
+all four margins are 25px<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;CSS Margin&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+      h1{<br>
+        margin: 0 0 50px;<br>
+      }<br>
+        #first{<br>
+            border: 2px solid black;<br>
+            margin-bottom: 30px;<br>
+        }<br>
+<br>
+        #second{<br>
+            border: 2px solid red;<br>
+            margin: 10px 200px 10px 300px;<br>
+        }<br>
+<br>
+        #third{<br>
+            width: 500px;<br>
+            border: 2px solid green;<br>
+            margin: 10px auto;<br>
+        }<br>
+    &lt;/style&gt;<br><br>
+  &lt;/head&gt;<br><br>
+<br><br>
+  &lt;body&gt;<br><br>
+    &lt;h1&gt;Yahoo Baba : CSS Margin&lt;/h1&gt;<br><br>
+<br><br>
+    &lt;div id="first"&gt;<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+    &lt;/div&gt;<br><br>
+<br><br>
+    &lt;div id="second"&gt;<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+    &lt;/div&gt;<br><br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br>
+<br><br>
+    &lt;div id="third"&gt;<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+<div id="tab7" class="tabcontent">
+ <h2>CSS Height/Width</h2>
+ <hr>
+ <p>
+   
+The CSS height and width properties are used to set the height and width of an element.The height and width properties do not include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the element.<br>
+<br>
+CSS height and width Values<br>
+The height and width properties may have the following values:<br>
+<br>
+    auto - This is default. The browser calculates the height and width<br>
+    length - Defines the height/width in px, cm, etc.<br>
+     % - Defines the height/width in percent of the containing block<br>
+    initial - Sets the height/width to its default value<br>
+    inherit - The height/width will be inherited from its parent value<br>
+<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Height & Width&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #first{<br>
+            width: 700px;<br>
+            height: 200px;<br>
+            border: 1px solid red;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Width & Height&lt;/h1&gt;<br>
+<br>
+    &lt;div id="first"&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius 
+    &lt;/div&gt;<br>
+<br>
+<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab8" class="tabcontent">
+ <h2>CSS Min-Height & Max-Height</h2>
+ <hr>
+ <p>
+   CSS Min-Height/Max-Height<br>
+The min-height property defines the minimum height of an element.<br>
+<br>
+if the content is smaller than the minimum height, the minimum height will be applied.<br>
+<br>
+If the content is larger than the minimum height, the min-height property has no effect.<br>
+The max-height property defines the maximum height of an element.<br>
+<br>
+if the content is larger than the maximum height, it will overflow. How the container will handle the overflowing content is defined by the overflow property.<br>
+If the content is smaller than the maximum height, the max-height property has no effect.<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Min-Height & Max-Height&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #first{<br>
+            width: 700px;<br>
+            min-height: 200px;<br>
+            max-height: 500px;<br>
+            border: 3px solid red;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Min-Height & Min-Height&lt;/h1&gt;<br>
+<br>
+    &lt;div id="first"&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+<br>
+<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab9" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   The min-width property defines the minimum width of an element.<br>
+<br>
+If the content is smaller than the minimum width, the minimum width will be applied.<br>
+If the content is larger than the minimum width, the min-width property has no effect.<br>
+The max-width property defines the maximum width of an element.<br>
+If the content is larger than the maximum width, it will automatically change the height of the element.<br>
+If the content is smaller than the maximum width, the max-width property has no effect.<br>
+ <br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Min-Width & Max-Width&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #first{<br>
+            border: 3px solid red;<br>
+            min-width: 300px;<br>
+            max-width: 800px;<br>
+        }<br>
+        img{<br>
+            width: 100%;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Min-Width & Min-Width&lt;/h1&gt;<br>
+<br>
+    &lt;div id="first"&gt;<br>
+        &lt;!-- random image from unsplash.com --&gt;<br>
+        &lt;img src="https://source.unsplash.com/random/600x300" alt=""&gt;<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab10" class="tabcontent">
+ <h2>CSS Color & Background</h2>
+ <hr>
+ <p>
+   CSS Box Sizing<br>
+The CSS box-sizing property is used to specify how to calculate the total height and width of an element.<br>
+<br>
+It controls the size of an element with a specified height and width.<br>
+<br>
+It allows you to include the padding and border within the total height and width of the element.<br>
+Without the CSS box-sizing Property<br>
+By default, the width and height of an element is calculated like this:<br>
+<br>
+width + padding + border = actual width of an element<br>
+<br>
+height + padding + border = actual height of an element<br>
+<br>
+This means: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).<br>
+<br>
+With the CSS box-sizing Property<br>
+The box-sizing property allows us to include the padding and border in an element's total width and height.<br>
+<br>
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height<br>
+
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Box-Sizing&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #box{<br>
+            width: 500px;<br>
+            border: 100px solid black;<br>
+            padding: 150px;<br>
+            box-sizing: border-box;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : Box-Sizing&lt;/h1&gt;<br>
+<br>
+    &lt;div id="box"&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+
+<div id="tab11" class="tabcontent">
+ <h2>CSS Overflow</h2>
+ 
+ <p>
+   The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.<br>
+<br>
+
+The overflow property has the following values:<br>
+
+<br>
+
+visible - Default. The overflow is not clipped. The content renders outside the element's box<br>
+
+hidden - The overflow is clipped, and the rest of the content will be invisible<br>
+
+scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content<br>
+
+auto - Similar to scroll, but it adds scrollbars only when necessary<br>
+
+&lt;html&gt;<br>
+
+  &lt;head&gt;<br>
+
+    &lt;title&gt;Overflow&lt;/title&gt;<br>
+
+    &lt;style&gt;<br>
+
+        #box{<br>
+
+            width: 250px;<br>
+
+            height: 250px;<br>
+
+            border: 2px solid black;<br>
+
+            overflow-x: scroll
+;
+        }<br>
+
+    &lt;/style&gt;<br>
+
+  &lt;/head&gt;<br>
+
+  &lt;body&gt;<br>
+
+    &lt;h1&gt;Yahoo Baba : CSS Overflow&lt;/h1&gt;<br>
+
+    &lt;div id="box"&gt;<br>
+<br>
+
+      &lt;img src="images/salman.jpg" alt=""&gt;<br>
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+
+    &lt;/div&gt;<br>
+
+  &lt;/body&gt;<br>
+
+&lt;/html&gt;<br>
+
+</p>
+</div>
+
+
+<div id="tab12" class="tabcontent">
+ <h2>CSS Border-Radius</h2>
+ <hr>
+ <p>
+   CSS Border-Radius<br>
+The border-radius property defines the radius of the element's corners.<br>
+<br>
+Tip: This property allows you to add rounded corners to elements! <br>
+<br>
+This property can have from one to four values. Here are the rules:<br>
+<br>
+Four values - border-radius: 15px 50px 30px 5px; (first value applies to top-left corner, <br>second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner):<br>
+<br>
+Three values - border-radius: 15px 50px 30px; (first value applies to top-left corner, second value applies to top-right and bottom-left corners, and third value applies to bottom-right corner):<br>
+<br>
+Two values - border-radius: 15px 50px; (first value applies to top-left and bottom-right corners, and the second value applies to top-right and bottom-left corners):<br>
+<br>
+One value - border-radius: 15px; (the value applies to all four corners, which are rounded equally:<br>
+ <br>
+<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Box-Radius&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #box{<br>
+            width: 300px;<br>
+            border: 2px solid black;<br>
+            padding: 25px;<br>
+            /* border-top-left-radius: 30px;<br>
+            border-top-right-radius: 50px;<br>
+            border-bottom-right-radius: 50px;<br>
+            border-bottom-left-radius: 30px; */<br>
+
+            /*shorthand*/<br>
+            border-radius: 50%;<br>
+<br>
+            /*shorthand with prefix*/<br>
+            /* -webkit-border-radius: 30px 50px;<br>
+            -moz-border-radius: 30px 50px; */<br>
+        }<br>
+        #box2{<br>
+            width: 150px;<br>
+            height: 150px;<br>
+            border: 2px solid red;<br>
+            border-radius: 50%;<br>
+            background-color: pink;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : Box-Radius&lt;/h1&gt;<br>
+<br>
+    &lt;div id="box"&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+<br>
+    &lt;div id="box2"&gt;&lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+<div id="tab13" class="tabcontent">
+ <h2>CSS Box-Shadow</h2>
+ <hr>
+ <p>
+   CSS Box-Shadow<br>
+The box-shadow CSS property adds shadow effects around an element’s frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color. In its simplest use, you only specify a horizontal and a vertical shadow. The default color of the shadow is the current text-color. Here is an example of how to specify a horizontal and a vertical shadow:<br>
+<br>
+&lt;html&gt;<br>
+  &lt;head&gt;<br>
+    &lt;title&gt;Box-Shadow&lt;/title&gt;<br>
+    &lt;style&gt;<br>
+        #box{<br>
+            width: 350px;<br>
+            height: 350px;<br>
+            margin: 50px 0 0 100px;<br>
+            border: 2px solid black;<br>
+            background-color: pink;<br>
+            box-shadow: 10px 10px 3px red inset;<br>
+            -moz-box-shadow: 10px 10px 3px red inset;<br>
+            -webkit-box-shadow: 10px 10px 3px red inset;<br>
+        }<br>
+    &lt;/style&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+    &lt;h1&gt;Yahoo Baba : CSS Box-Shadow&lt;/h1&gt;<br>
+    &lt;div id="box"&gt;<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis lectus ac ipsum lobortis malesuada vitae vitae lorem. Vestibulum euismod, lacus a dictum ultrices, lorem libero porttitor dui, in feugiat sem lacus eget elit. Nunc ultricies varius ligula in egestas. Nunc blandit malesuada nisi ut dapibus. Cras in malesuada lectus, eu rhoncus erat. Vivamus fermentum nisi malesuada mauris accumsan, cursus convallis dolor dictum. Sed hendrerit dictum dignissim. Maecenas eget luctus neque, at sollicitudin metus. Etiam urna turpis, aliquam quis semper at, rutrum et risus. Duis laoreet, nulla non maximus laoreet, risus erat mollis augue, sit amet consequat magna orci et dolor. Praesent fermentum nisl quis urna gravida, ac lacinia velit pretium. Aliquam at arcu et erat porta convallis ut non turpis.<br>
+    &lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</p>
+</div>
+
+
+<div id="tab14" class="tabcontent">
+ <h2>CSS </h2>
+ <hr>
+ <p>
+   
+</p>
+</div>
+
+
+</div>
+
+<script>
+  var tabButtons = document.querySelectorAll(".tablinks");
+
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].addEventListener("click", function () {
+        var tabName = this.dataset.tab;
+        var tabContent = document.getElementById(tabName);
+        var allTabContent = document.querySelectorAll(".tabcontent");
+        var allTabButtons = document.querySelectorAll(".tablinks");
+
+        for (var j = 0; j < allTabContent.length; j++) {
+          allTabContent[j].style.display = "none";
+        }
+
+        for (var k = 0; k < allTabButtons.length; k++) {
+          allTabButtons[k].classList.remove("active");
+        }
+
+        tabContent.style.display = "block";
+        this.classList.add("active");
+      });
+    }
+
+    document.querySelector(".tablinks").click();
+
+    $("#container").draggable();
+  $("#container").resizable();
+  $(document).ready(function(){
+    $("#codeedit").click(function(){
+      $("#container").toggle(250);
+    });
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
